@@ -40,7 +40,7 @@ func (bot *robot) processPREvent(e *sdk.PullRequestEvent, cfg *botConfig, log *l
 	canReview := cfg.CI.NoCI
 
 	switch sdk.GetPullRequestAction(e) {
-	case sdk.ActionOpen:
+	case sdk.PRActionOpened:
 		mr := multiError()
 		pr := prInfoOnPREvent{e}
 
